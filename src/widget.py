@@ -37,8 +37,6 @@ def mask_for_acc_card(work_str: str) -> str:
 
 
 def get_date(curr_date: str) -> str:
-    """Функция получает строку и возвращает из нее дату в формате дд.мм.гггг,
-    причем, использует для этого модуль datetime"""
 
     date_interm = datetime.strptime(curr_date, "%Y-%m-%dT%H:%M:%S.%f")
     date_output = datetime.strftime(date_interm, "%d.%m.%y")
