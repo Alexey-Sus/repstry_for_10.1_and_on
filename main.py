@@ -31,5 +31,6 @@ list_orig: list = [
     {"id": 615064591, "state": "CANCELLED", "date": "2018-10-14T08:21:33.419441"},
 ]
 
+print()
 print(list_sort_date(list_orig))
 print(list_for_state(list_orig))
