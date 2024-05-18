@@ -51,8 +51,8 @@ def list_sort_prod_price(work_list: list) -> list:
     return list_output
 
 #проверяем работу функции выводом через print в цикле
-for i in list_sort_prod_price(list_orig):
-    print(i)
+# for i in list_sort_prod_price(list_orig):
+#     print(i)
 
 # Доп. задание №2
 # Напишите ф-ию, кот. принимает на вход список словарей, представляющих инф-ию о заказах в интерн - маг
@@ -96,9 +96,9 @@ def quant_avg_pr_month(work_list: list) -> dict:
         dict_output[j] = {'average_order_value': avg_price, 'order_count': amnt_of_orders}
 
     return dict_output
-i
+
 #проверка вывода функции:
 
-for i in quant_avg_pr_month(list_dict):
-    value = quant_avg_pr_month(list_dict)[i]
-    print(f'{i}: {value}')
+# for i in quant_avg_pr_month(list_dict):
+#     value = quant_avg_pr_month(list_dict)[i]
+#     print(f'{i}: {value}')
