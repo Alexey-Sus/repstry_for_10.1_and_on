@@ -39,5 +39,6 @@ def list_for_state(work_list: list, state_val="EXECUTED") -> list:
     return list_new
 
 
+print(i)
 for i in list_for_state(list_orig):
     print(i)
