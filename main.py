@@ -28,12 +28,12 @@ list_orig: list = [
     {"id": 615064591, "state": "CANCELLED", "date": "2018-10-14T08:21:33.419441"},
 ]
 
-#проверка работы функций (для функции сортировки передаем значение 'cancelled')
+# проверка работы функций (для функции сортировки передаем значение 'cancelled')
 
 for i in list_sort_date((list_orig), False):
     print(i)
 
 print()
 
-for i in list_for_state(list_orig, 'cancelled'):
+for i in list_for_state(list_orig):
     print(i)

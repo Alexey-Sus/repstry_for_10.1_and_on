@@ -17,20 +17,19 @@ def list_sort_date(work_list: list, reverse_or_not: bool = True) -> list:
     return sorted(work_list, key=lambda x: x["date"], reverse=reverse_or_not)
 
 
-for i in list_sort_date(list_orig, True):
-    print(i)
-
 # Напишите функцию, которая принимает на вход список словарей и значение для ключа
 # state (опциональный параметр со значением по умолчанию EXECUTED) и возвращает новый список,
 # содержащий только те словари, у которых ключ state содержит переданное в функцию значение.
+
+
 print()
 
 
 def list_for_state(work_list: list, state_val="EXECUTED") -> list:
-    """ Функция принимает на вход список словарей и зн-ие для ключа state (опц. параметр со зн-ием по умолчанию
+    """Функция принимает на вход список словарей и зн-ие для ключа state (опц. параметр со зн-ием по умолчанию
     EXECUTED) и возвр-ет нов. список, содержащий только те словари, у кот. ключ state содержит
     переданное в ф-ю зн-ие"""
-    state_new: str = state_val.upper()
+
     list_new: list = []
 
     for i in work_list:
