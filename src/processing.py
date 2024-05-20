@@ -13,11 +13,15 @@ list_orig: list = [
 ]
 
 
-def list_sort_date(work_list: list) -> list:
-    return sorted(work_list, key=lambda x: x["date"], reverse=False)
+def list_sort_date(work_list: list, reverse_or_not: bool = True) -> list:
+    """Функция принимает на вход сп-к словарей и возвр-ет новый список,
+    в котором исх. словари отсортированы по убываанию даты (ключ date). Принимает 2 аргумента:
+    2-й - необязательный порядок сортировки"""
+
+    return sorted(work_list, key=lambda x: x["date"], reverse=reverse_or_not)
 
 
-for i in list_sort_date(list_orig):
+for i in list_sort_date(list_orig, True):
     print(i)
 
 # Напишите функцию, которая принимает на вход список словарей и значение для ключа
@@ -27,6 +31,8 @@ print()
 
 
 def list_for_state(work_list: list, state_val="EXECUTED") -> list:
+    """ Функция принимает на вход список словарей и зн-ие для ключа state (опц. параметр со зн-ием по умолчанию
+    EXECUTED) и возвр-ет нов. список, содержащий только те словари, у кот. ключ state содержит переданное в ф-ю зн-ие"""
     state_new: str = input("Enter the /state/ parameter (EXECUTED/CANCELLED): ").upper()
     list_new: list = []
     if state_new not in ["CANCELLED", "EXECUTED"]:
