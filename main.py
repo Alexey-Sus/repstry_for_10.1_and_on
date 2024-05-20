@@ -14,13 +14,10 @@ list_for_product = [2, 3, 5, -7, 11, -345]
 # print(f"Маскированныый номер сущности: {mask_for_acc_card(str_new)}")
 # print(f"Дата в формате ДД.ММ.ГГГГ: {get_date(date_for_ex)}")
 
-print()
 # вызываем функции из дополнительного задания
 # print(f"Нов. сп-к один. 1-й и посл. бкв.: {get_similar_char(list_for_list_char)}")
 # print(f"Макс. произв. эл-ов списка равно {get_max_product(list_for_product)}")
 
-print()
-print()
 # вводим тестовую переменную для функций из основногоо задания урока 10.1
 # и вызываем функции из основного задания урока 10.1
 
@@ -31,6 +28,12 @@ list_orig: list = [
     {"id": 615064591, "state": "CANCELLED", "date": "2018-10-14T08:21:33.419441"},
 ]
 
+#проверка работы функций (для функции сортировки передаем значение 'cancelled')
+
+for i in list_sort_date((list_orig), False):
+    print(i)
+
 print()
-print(list_sort_date(list_orig))
-print(list_for_state(list_orig))
+
+for i in list_for_state(list_orig, 'cancelled'):
+    print(i)

@@ -1,7 +1,3 @@
-# посмотреть вот тут: https://bytegeek.ru/sortirovka-fajlov-v-direktorii-po-date-sozdaniya
-# -ili-izmeneniya-v-python/
-
-
 # Напишите ф-ю, кот. приним-ет на вход список словарей и возвр. новый список,
 # в кот. исх. словари отсорт-ны по убыванию даты (ключ date). Принимает 2 арг-та: 2-й - необяз. поряд. сорт.
 
@@ -32,20 +28,12 @@ print()
 
 def list_for_state(work_list: list, state_val="EXECUTED") -> list:
     """ Функция принимает на вход список словарей и зн-ие для ключа state (опц. параметр со зн-ием по умолчанию
-    EXECUTED) и возвр-ет нов. список, содержащий только те словари, у кот. ключ state содержит переданное в ф-ю зн-ие"""
-    state_new: str = input("Enter the /state/ parameter (EXECUTED/CANCELLED): ").upper()
+    EXECUTED) и возвр-ет нов. список, содержащий только те словари, у кот. ключ state содержит
+    переданное в ф-ю зн-ие"""
+    state_new: str = state_val.upper()
     list_new: list = []
-    if state_new not in ["CANCELLED", "EXECUTED"]:
-        state_val = "EXECUTED"
-    else:
-        state_val = state_new
+
     for i in work_list:
-        if i["state"] == state_val:
+        if i["state"] == state_val.upper():
             list_new.append(i)
     return list_new
-
-
-print(i)
-print(i)
-for i in list_for_state(list_orig):
-    print(i)
