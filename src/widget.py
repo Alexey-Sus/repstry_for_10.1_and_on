@@ -17,9 +17,12 @@ def mask_for_acc_card(work_str: str) -> str:
     else:
         for i in work_str:
             if i in ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]:
-                new_str = work_str[work_str.find(i): len(work_str)]
+                new_str = work_str[work_str.find(i) : len(work_str)]
                 mask = (
-                        "Карта " + work_str[0: work_str.find(i)] + new_str[0:4] + " "
+                    "Карта "
+                    + work_str[0 : work_str.find(i)]
+                    + new_str[0:4]
+                    + " "
                     + new_str[4:6]
                     + "** **** "
                     + new_str[12:16]

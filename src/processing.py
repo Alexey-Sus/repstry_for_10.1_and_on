@@ -36,3 +36,6 @@ def list_for_state(work_list: list, state_val="EXECUTED") -> list:
         if i["state"] == state_val.upper():
             list_new.append(i)
     return list_new
+
+print()
+
