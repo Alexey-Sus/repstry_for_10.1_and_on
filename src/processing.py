@@ -38,4 +38,5 @@ def list_for_state(work_list: list, state_val="EXECUTED") -> list:
     return list_new
 
 print()
+print()
 
