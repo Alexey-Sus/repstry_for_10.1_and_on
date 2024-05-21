@@ -37,5 +37,3 @@ def list_for_state(work_list: list, state_val="EXECUTED") -> list:
             list_new.append(i)
     return list_new
 
-print()
-
