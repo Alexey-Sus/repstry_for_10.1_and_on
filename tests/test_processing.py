@@ -1,0 +1,28 @@
+from src.processing import list_sort_date, list_for_state
+
+# вводим переменную для проверки функций
+
+list_orig: list = [
+    {"id": 41428829, "state": "EXECUTED", "date": "2019-07-03T18:35:29.512364"},
+    {"id": 939719570, "state": "EXECUTED", "date": "2018-06-30T02:08:58.425572"},
+    {"id": 594226727, "state": "CANCELLED", "date": "2018-09-12T21:27:25.241689"},
+    {"id": 615064591, "state": "CANCELLED", "date": "2018-10-14T08:21:33.419441"},
+]
+
+def test_list_sort_date():
+    # переменная, которая должна быть возвращена:
+    var_for_output: list = [
+    {'id': 939719570, 'state': 'EXECUTED', 'date': '2018-06-30T02:08:58.425572'},
+    {'id': 594226727, 'state': 'CANCELLED', 'date': '2018-09-12T21:27:25.241689'},
+    {'id': 615064591, 'state': 'CANCELLED', 'date': '2018-10-14T08:21:33.419441'},
+    {'id': 41428829, 'state': 'EXECUTED', 'date': '2019-07-03T18:35:29.512364'}
+    ]
+    assert list_sort_date(list_orig, False) == var_for_output
+
+def test_list_for_state():
+    # переменная, которая должна быть возвращена:
+    var_for_output: list = [
+        {'id': 41428829, 'state': 'EXECUTED', 'date': '2019-07-03T18:35:29.512364'},
+        {'id': 939719570, 'state': 'EXECUTED', 'date': '2018-06-30T02:08:58.425572'}
+        ]
+    assert list_for_state(list_orig) == var_for_output
