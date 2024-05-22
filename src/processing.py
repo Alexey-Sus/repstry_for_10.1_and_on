@@ -14,7 +14,10 @@ def list_sort_date(work_list: list, reverse_or_not: bool = True) -> list:
     в котором исх. словари отсортированы по убываанию даты (ключ date). Принимает 2 аргумента:
     2-й - необязательный порядок сортировки"""
 
-    return sorted(work_list, key=lambda x: x["date"], reverse=reverse_or_not)
+    if isinstance(work_list, list):
+        return sorted(work_list, key=lambda x: x["date"], reverse=reverse_or_not)
+    else:
+        return []
 
 
 # Напишите функцию, которая принимает на вход список словарей и значение для ключа
@@ -31,10 +34,12 @@ def list_for_state(work_list: list, state_val="EXECUTED") -> list:
     переданное в ф-ю зн-ие"""
 
     list_new: list = []
-
-    for i in work_list:
-        if i["state"] == state_val.upper():
-            list_new.append(i)
+    if isinstance(work_list, list):
+        for i in work_list:
+            if i["state"] == state_val.upper():
+                list_new.append(i)
+    else:
+        list_new = []
     return list_new
 
 print()

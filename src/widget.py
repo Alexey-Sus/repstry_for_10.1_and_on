@@ -39,8 +39,13 @@ def mask_for_acc_card(work_str: str) -> str:
 
 
 def get_date(curr_date: str) -> str:
+    date_output: list = ''
 
-    date_interm = datetime.strptime(curr_date, "%Y-%m-%dT%H:%M:%S.%f")
-    date_output = datetime.strftime(date_interm, "%d.%m.%y")
+    if curr_date == '' or not isinstance(curr_date, str):
+        date_output = ''
+
+    else:
+        date_interm = datetime.strptime(curr_date, "%Y-%m-%dT%H:%M:%S.%f")
+        date_output = datetime.strftime(date_interm, "%d.%m.%y")
 
     return date_output

@@ -18,6 +18,9 @@ def test_list_sort_date():
     {'id': 41428829, 'state': 'EXECUTED', 'date': '2019-07-03T18:35:29.512364'}
     ]
     assert list_sort_date(list_orig, False) == var_for_output
+    assert list_sort_date([]) == []
+    assert list_sort_date('343434') == []
+    assert list_sort_date({}) == []
 
 def test_list_for_state():
     # переменная, которая должна быть возвращена:
@@ -26,3 +29,6 @@ def test_list_for_state():
         {'id': 939719570, 'state': 'EXECUTED', 'date': '2018-06-30T02:08:58.425572'}
         ]
     assert list_for_state(list_orig) == var_for_output
+    assert list_for_state([]) == []
+    assert list_for_state('') == []
+    assert list_for_state({}) == []
