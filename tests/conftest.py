@@ -3,6 +3,7 @@ import pytest
 
 # создадим фикстуру для тестирования функций в processing
 
+
 @pytest.fixture()
 def fixt_for_lists():
     return [

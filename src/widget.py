@@ -39,7 +39,6 @@ def mask_for_acc_card(work_str: str) -> str:
 
 
 def get_date(curr_date: str) -> str:
-    date_output: list = ''
 
     if curr_date == '' or not isinstance(curr_date, str):
         date_output = ''
