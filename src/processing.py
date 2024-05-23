@@ -1,7 +1,3 @@
-# посмотреть вот тут: https://bytegeek.ru/sortirovka-fajlov-v-direktorii-po-date-sozdaniya
-# -ili-izmeneniya-v-python/
-
-
 # Напишите ф-ю, кот. приним-ет на вход список словарей и возвр. новый список,
 # в кот. исх. словари отсорт-ны по убыванию даты (ключ date). Принимает 2 арг-та: 2-й - необяз. поряд. сорт.
 
@@ -13,33 +9,38 @@ list_orig: list = [
 ]
 
 
-def list_sort_date(work_list: list) -> list:
-    return sorted(work_list, key=lambda x: x["date"], reverse=False)
+def list_sort_date(work_list: list, reverse_or_not: bool = True) -> list:
+    """Функция принимает на вход сп-к словарей и возвр-ет новый список,
+    в котором исх. словари отсортированы по убываанию даты (ключ date). Принимает 2 аргумента:
+    2-й - необязательный порядок сортировки"""
 
+    if isinstance(work_list, list):
+        return sorted(work_list, key=lambda x: x["date"], reverse=reverse_or_not)
+    else:
+        return []
 
-for i in list_sort_date(list_orig):
-    print(i)
 
 # Напишите функцию, которая принимает на вход список словарей и значение для ключа
 # state (опциональный параметр со значением по умолчанию EXECUTED) и возвращает новый список,
 # содержащий только те словари, у которых ключ state содержит переданное в функцию значение.
+
+
 print()
 
 
 def list_for_state(work_list: list, state_val="EXECUTED") -> list:
-    state_new: str = input("Enter the /state/ parameter (EXECUTED/CANCELLED): ").upper()
+    """Функция принимает на вход список словарей и зн-ие для ключа state (опц. параметр со зн-ием по умолчанию
+    EXECUTED) и возвр-ет нов. список, содержащий только те словари, у кот. ключ state содержит
+    переданное в ф-ю зн-ие"""
+
     list_new: list = []
-    if state_new not in ["CANCELLED", "EXECUTED"]:
-        state_val = "EXECUTED"
+    if isinstance(work_list, list):
+        for i in work_list:
+            if i["state"] == state_val.upper():
+                list_new.append(i)
     else:
-        state_val = state_new
-    for i in work_list:
-        if i["state"] == state_val:
-            list_new.append(i)
+        list_new = []
     return list_new
 
 
-print(i)
-print(i)
-for i in list_for_state(list_orig):
-    print(i)
+print()
