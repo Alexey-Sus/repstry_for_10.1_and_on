@@ -34,6 +34,7 @@ for i in list_sort_date((list_orig), False):
     print(i)
 
 print()
+print()
 
 for i in list_for_state(list_orig):
     print(i)
