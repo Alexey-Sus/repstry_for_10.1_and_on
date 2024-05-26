@@ -62,3 +62,5 @@ def test_list_for_state_1(fixt_for_lists):
         {"id": 939719570, "state": "EXECUTED", "date": "2018-06-30T02:08:58.425572"},
     ]
     assert list_for_state(fixt_for_lists) == var_for_output
+
+print()
