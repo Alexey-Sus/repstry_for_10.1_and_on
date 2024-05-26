@@ -1,5 +1,6 @@
 import pytest
 
+print()
 
 # создадим фикстуру для тестирования функций в processing
 

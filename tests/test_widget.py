@@ -36,3 +36,5 @@ def test_get_date():
 def test_get_date_1(input_date, expected_date):
     """Тестовая функция для проверки функции формата даты при помощи параметризации"""
     assert get_date(input_date) == expected_date
+
+print()
